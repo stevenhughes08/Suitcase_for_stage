@@ -19,7 +19,7 @@ namespace suitcase.Models
     }
 
     public class Prop : BaseNamedEntity
-    {
+    {   
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid PropId { get; set; }
         public string StorageLocation { get; set; }
