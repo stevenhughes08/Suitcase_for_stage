@@ -234,9 +234,7 @@ namespace suitcase
 
                         {
 
-                            Name = "Bus Stop",
-
-                            Performance = "Everything in Life is Luck"
+                            Name = "Bus Stop"
 
                         },
 
@@ -244,9 +242,7 @@ namespace suitcase
 
                         {
 
-                            Name = "Poker",
-
-                            Performance = "Stuck in New Albany...again"
+                            Name = "Poker"
 
                         },
 
@@ -254,9 +250,7 @@ namespace suitcase
 
                         {
 
-                            Name = "Bottle Act",
-
-                            Performance = "Greatest Hits"
+                            Name = "Bottle Act"
 
                         },
 
@@ -264,9 +258,7 @@ namespace suitcase
 
                         {
 
-                            Name = "Tinder",
-
-                            Performance = "Greatest Hits"
+                            Name = "Tinder"
 
                         }, 
 
@@ -274,25 +266,20 @@ namespace suitcase
 
                         {
 
-                            Name = "Helium",
-
-                            Performance = "Greatest Hits"
-
+                            Name = "Helium"
+                
                         },
 
                         new Act
 
                         {
 
-                            Name = "Beach Act",
-
-                            Performance = "Vodka-Rama"
+                            Name = "Beach Act"
 
                         }
 
                     };
 
-                    
 
                 context.AddRangeAsync(acts);
 
