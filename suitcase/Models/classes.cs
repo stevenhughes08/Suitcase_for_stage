@@ -37,6 +37,11 @@ namespace suitcase.Models
     public class Performance : BaseNamedEntity
     {       
         public ICollection<Act> Acts { get; set; }
+
+        public static implicit operator Performance(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class ActProp
