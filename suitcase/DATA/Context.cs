@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using suitcase.Models;
 
@@ -9,6 +10,8 @@ namespace suitcase.Data
         {
 
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlite("Data Source=suitcateContext.db");
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             modelBuilder.Entity<ActPerformer>().HasKey(t => new { t.PerformerId, t.ActId });
             modelBuilder.Entity<ActProp>().HasKey( t => new { t.PropId, t.ActId });
