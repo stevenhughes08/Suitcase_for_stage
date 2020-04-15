@@ -1,2 +1,2 @@
 -- SQLite
-SELECT * FROM Performance;
+SELECT * FRom Props;
