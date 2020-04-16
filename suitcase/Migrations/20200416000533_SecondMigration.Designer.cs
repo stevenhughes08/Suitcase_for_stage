@@ -9,8 +9,8 @@ using suitcase.Data;
 namespace suitcase.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20200413234854_SQLiteInitialMigration3")]
-    partial class SQLiteInitialMigration3
+    [Migration("20200416000533_SecondMigration")]
+    partial class SecondMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

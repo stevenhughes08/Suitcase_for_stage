@@ -2,7 +2,7 @@
 
 namespace suitcase.Migrations
 {
-    public partial class SQLiteInitialMigration3 : Migration
+    public partial class SecondMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

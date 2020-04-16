@@ -63,11 +63,16 @@ namespace suitcase.Controllers
             {
                 act.Id = Guid.NewGuid();
                 _context.Add(act);
-                await _context.SaveChangesAsync();
+                await NewMethod();
                 return RedirectToAction(nameof(Index));
             }
             ViewData["PerformanceId"] = new SelectList(_context.Performances, "Id", "Id", act.PerformanceId);
             return View(act);
+
+            async Task NewMethod()
+            {
+                await _context.SaveChangesAsync();
+            }
         }
 
         // GET: Act/Edit/5

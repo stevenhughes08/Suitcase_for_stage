@@ -1,2 +1,2 @@
 -- SQLite
-SELECT * FRom Props;
+SELECT * FROM acts;
