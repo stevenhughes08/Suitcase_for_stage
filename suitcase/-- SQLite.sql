@@ -1,2 +1,2 @@
 -- SQLite
-SELECT * FROM acts;
+SELECT * FROM Performances;

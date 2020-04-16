@@ -63,6 +63,7 @@ namespace suitcase.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            // ViewData["ActName"] = new SelectList(_context.Acts, "Name", "Name", prop.ActProps);
             return View(prop);
         }
 
