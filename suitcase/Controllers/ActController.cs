@@ -157,5 +157,11 @@ namespace suitcase.Controllers
         {
             return _context.Acts.Any(e => e.Id == id);
         }
+
+        // [HttpGet]
+        // public async Task<IActionResult> Index()
+        // {
+        //     string[] props-int-Act =
+        // }
     }
 }
