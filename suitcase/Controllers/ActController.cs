@@ -66,7 +66,7 @@ namespace suitcase.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PerformanceId"] = new SelectList(_context.Performances, "Id", "Id", act.PerformanceId);
+            ViewData["Performance    "] = new SelectList(_context.Performances, "Id", "Id", act.PerformanceId);
             return View(act);
         }
 

@@ -1,2 +1,2 @@
 -- SQLite
-SELECT * FROM Performances;
+SELECT Id, Name, PropId, StorageLocation FROM Props;

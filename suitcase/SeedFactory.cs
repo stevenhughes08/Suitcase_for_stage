@@ -19,7 +19,7 @@ namespace suitcase
                 {
                     
                     new Prop
-                    {
+                    {   
                         Name = "Table",
                         StorageLocation = "Basement"
                     },
