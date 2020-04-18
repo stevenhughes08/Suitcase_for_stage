@@ -1,3 +1,11 @@
+@charset "UTF-8";
+a[href="/"]::before {
+  content: "";
+}
 
+.suitstack {
+  max-width: 55%;
+  height: auto;
+}
 
 /*# sourceMappingURL=custom.css.map */

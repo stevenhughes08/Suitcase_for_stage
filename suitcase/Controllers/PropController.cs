@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +21,29 @@ namespace suitcase.Controllers
         }
 
         // GET: Prop
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            return View(await _context.Props.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["StoreageLocactionSortParm"] = sortOrder == "StorageLocation" ? "StorageLocation_desc" : "StorageLocation";
+            var props = from s in _context.Props
+                        select s;
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    props = props.OrderByDescending(s => s.Name);
+                    break;
+                case "StorageLocation":
+                    props = props.OrderBy(s => s.StorageLocation);
+                    break;
+                case "StorageLocation_desc":
+                    props = props.OrderByDescending(s => s.StorageLocation);
+                    break;
+                default:
+                    props = props.OrderBy(s => s.StorageLocation);
+                    break;
+            } 
+            return View(await props.AsNoTracking().ToListAsync());
         }
 
         // GET: Prop/Details/5
