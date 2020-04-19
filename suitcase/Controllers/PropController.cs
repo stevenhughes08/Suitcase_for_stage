@@ -21,12 +21,31 @@ namespace suitcase.Controllers
         }
 
         // GET: Prop
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int? pageNumber)
         {
+            ViewData["CurrentSort"] = sortOrder;
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["StoreageLocactionSortParm"] = sortOrder == "StorageLocation" ? "StorageLocation_desc" : "StorageLocation";
+            ViewData["CurrentFilter"] = searchString;
+
+            if(searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
+
             var props = from s in _context.Props
                         select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                props = props.Where(s => s.StorageLocation.Contains(searchString) || s.Name.Contains(searchString));
+            }
 
             switch (sortOrder)
             {
@@ -42,8 +61,11 @@ namespace suitcase.Controllers
                 default:
                     props = props.OrderBy(s => s.StorageLocation);
                     break;
-            } 
-            return View(await props.AsNoTracking().ToListAsync());
+            }
+
+            int pageSize = 3;
+
+            return View(await PaginatedList<Prop>.CreateAsync(props.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: Prop/Details/5
