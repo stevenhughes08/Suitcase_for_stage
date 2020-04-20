@@ -49,6 +49,7 @@ namespace suitcase.Controllers
         public IActionResult Create()
         {
             ViewData["PerformanceId"] = new SelectList(_context.Performances, "Id", "Id");
+            ViewData["PerformanceName"] = new SelectList(_context.Performances, "Name", "Name");
             return View();
         }
 
