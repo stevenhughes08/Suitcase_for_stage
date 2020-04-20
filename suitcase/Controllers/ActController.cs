@@ -66,7 +66,7 @@ namespace suitcase.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Performance    "] = new SelectList(_context.Performances, "Id", "Id", act.PerformanceId);
+            ViewData["PerformanceId"] = new SelectList(_context.Performances, "Id", "Id", act.PerformanceId);
             return View(act);
         }
 
@@ -157,11 +157,5 @@ namespace suitcase.Controllers
         {
             return _context.Acts.Any(e => e.Id == id);
         }
-
-        // [HttpGet]
-        // public async Task<IActionResult> Index()
-        // {
-        //     string[] props-int-Act =
-        // }
     }
 }
