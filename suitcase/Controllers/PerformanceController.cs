@@ -1,3 +1,5 @@
+using System.Data;
+using System.Data.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using suitcase.Data;
 using suitcase.Models;
+using suitcase.Models.ViewModels;
 
 namespace suitcase.Controllers
 {
@@ -33,13 +36,13 @@ namespace suitcase.Controllers
                 return NotFound();
             }
 
-            var performance = await _context.Performances
+            var performance = await _context.Performances.Include(a => a.Acts).ThenInclude(a => a.ActProps).ThenInclude(a => a.Prop)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (performance == null)
             {
                 return NotFound();
             }
-
+            
             return View(performance);
         }
 
@@ -150,5 +153,29 @@ namespace suitcase.Controllers
         {
             return _context.Performances.Any(e => e.Id == id);
         }
+
+        //CREATE AND ACCESS THE VIEWMODEL
+        // public ViewResult PerformaceDetails()
+        // {
+        //     ViewBag.Title = "Performance Details Page";
+        //     ViewBag.Header = "Setlist View";
+
+        //     //Performance Basic Details
+        //    Performance Performance = new Performance()
+        //    {
+        //         // Id = "Performance.Id",
+        //         // Name = "Performance.Name",
+        //         // Act = "ActName",
+        //         // PerformerNames = "PerformerName",
+        //         // PropName = "PropName"
+
+        //    };
+            
+        //     PerformanceDetailsViewModel performanceDetailsViewModel = new PerformanceDetailsViewModel()
+        //     {
+
+        //     }
+        //     return View(performanceDetailsViewModel);
+        // }
     }
 }

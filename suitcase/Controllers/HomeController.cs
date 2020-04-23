@@ -5,7 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 using suitcase.Models;
+using suitcase.Models.ViewModels;
+using suitcase.Data;
 
 namespace suitcase.Controllers
 {

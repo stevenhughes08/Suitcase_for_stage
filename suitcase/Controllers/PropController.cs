@@ -63,7 +63,7 @@ namespace suitcase.Controllers
                     break;
             }
 
-            int pageSize = 3;
+            int pageSize = 10;
 
             return View(await PaginatedList<Prop>.CreateAsync(props.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
