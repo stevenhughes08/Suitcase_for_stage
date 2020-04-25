@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -14,11 +15,12 @@ namespace suitcase.Models.ViewModels
         {
             PerformanceId = performance.Id;
             PerformanceName = performance.Name;
-        //     ActDetailsViewModels = new ActDetailsViewModel
-        //     {
+            // ActDetailsViewModels = new ActDetailsViewModel
+            // {
+                
 
-        //     };
-        // }
+            // };
+        }
 
         public Guid PerformanceId { get; set; }
         public string PerformanceName { get; set; }
