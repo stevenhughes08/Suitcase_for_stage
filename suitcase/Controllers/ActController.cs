@@ -84,7 +84,7 @@ namespace suitcase.Controllers
             {
                 return NotFound();
             }
-            ViewData["PerformanceId"] = new SelectList(_context.Performances, "Id", "Id", act.PerformanceId);
+            ViewData["PerformanceId"] = new SelectList(_context.Performances, "Name", "Id", act.PerformanceId);
             return View(act);
         }
 
