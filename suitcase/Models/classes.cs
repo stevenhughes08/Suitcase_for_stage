@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace suitcase.Models
@@ -24,10 +23,14 @@ namespace suitcase.Models
 
     public class Prop : BaseNamedEntity
     {   
+<<<<<<< HEAD
         
         // public Guid PropId { get; set; }
 
         [Display(Name = "Storage Location")]
+=======
+        public Guid PropId { get; set; }
+>>>>>>> parent of 5d9934e... Working with the view Model
         public string StorageLocation { get; set; }
         public ICollection<ActProp> ActProps { get; set; }
     }

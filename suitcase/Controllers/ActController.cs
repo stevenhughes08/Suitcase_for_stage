@@ -85,7 +85,11 @@ namespace suitcase.Controllers
             {
                 return NotFound();
             }
+<<<<<<< HEAD
             ViewData["PerformanceId"] = new SelectList(_context.Performances, "Id", "Name", act.PerformanceId);
+=======
+            ViewData["PerformanceId"] = new SelectList(_context.Performances, "Id", "Id", act.PerformanceId);
+>>>>>>> parent of 5d9934e... Working with the view Model
             return View(act);
         }
 
