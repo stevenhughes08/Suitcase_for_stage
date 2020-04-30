@@ -48,10 +48,10 @@ namespace suitcase.Models
     public class ActProp
     {
         public Guid ActId { get; set; }
-        [ForeignKey("Act.Id")]
+        [ForeignKey("ActId")]
         public Act Act { get; set; }
         public Guid PropId { get; set; }
-        [ForeignKey("Prop.Id")]
+        [ForeignKey("PropId")]
         public Prop Prop { get; set; }
     
     }
