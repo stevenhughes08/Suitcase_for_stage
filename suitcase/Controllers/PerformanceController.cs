@@ -1,4 +1,3 @@
-using System.Dynamic;
 using System.Data;
 using System.Data.Common;
 using System;
@@ -37,7 +36,7 @@ namespace suitcase.Controllers
                 return NotFound();
             }
 
-            var performance = await _context.Performances.Include(a => a.Acts).ThenInclude(a => a.ActProps).ThenInclude(a => a.Prop)
+            var performance = await _context.Performances.Include(a => a.Acts).ThenInclude(a => a.ActProps).ThenInclude(a => a.Prop.Name)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (performance == null)
             {

@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using suitcase.Data;
 using suitcase.Models;
 
+
 namespace suitcase.Controllers
 {
     public class ActController : Controller
@@ -48,7 +49,7 @@ namespace suitcase.Controllers
         // GET: Act/Create
         public IActionResult Create()
         {
-            ViewData["PerformanceId"] = new SelectList(_context.Performances, "Id", "Id");
+            // ViewData["PerformanceId"] = new SelectList(_context.Performances, "Id", "Id");
             ViewData["PerformanceName"] = new SelectList(_context.Performances, "Name", "Name");
             return View();
         }
@@ -58,7 +59,7 @@ namespace suitcase.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PerformanceId,Id,Name")] Act act)
+        public async Task<IActionResult> Create([Bind("Performance, PerformanceId,Id,Name")] Act act)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +85,7 @@ namespace suitcase.Controllers
             {
                 return NotFound();
             }
-            ViewData["PerformanceId"] = new SelectList(_context.Performances, "Name", "Id", act.PerformanceId);
+            ViewData["PerformanceId"] = new SelectList(_context.Performances, "Id", "Name", act.PerformanceId);
             return View(act);
         }
 

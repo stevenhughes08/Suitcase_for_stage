@@ -10,6 +10,9 @@ namespace suitcase.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
+
+        [Required(AllowEmptyStrings = false)]
+        [StringLength(100)]
         public string Name { get; set; }
     }
 
@@ -21,7 +24,8 @@ namespace suitcase.Models
 
     public class Prop : BaseNamedEntity
     {   
-        public Guid PropId { get; set; }
+        
+        // public Guid PropId { get; set; }
 
         [Display(Name = "Storage Location")]
         public string StorageLocation { get; set; }
@@ -44,10 +48,10 @@ namespace suitcase.Models
     public class ActProp
     {
         public Guid ActId { get; set; }
-        [ForeignKey("ActId")]
+        [ForeignKey("Act.Id")]
         public Act Act { get; set; }
         public Guid PropId { get; set; }
-        [ForeignKey("PropId")]
+        [ForeignKey("Prop.Id")]
         public Prop Prop { get; set; }
     
     }
