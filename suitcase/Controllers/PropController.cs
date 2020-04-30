@@ -97,7 +97,7 @@ namespace suitcase.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PropId,StorageLocation,Id,Name")] Prop prop)
+        public async Task<IActionResult> Create([Bind("StorageLocation,Id,Name")] Prop prop)
         {
             if (ModelState.IsValid)
             {
@@ -131,7 +131,7 @@ namespace suitcase.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("PropId,StorageLocation,Id,Name")] Prop prop)
+        public async Task<IActionResult> Edit(Guid id, [Bind("StorageLocation,Id,Name")] Prop prop)
         {
             if (id != prop.Id)
             {
