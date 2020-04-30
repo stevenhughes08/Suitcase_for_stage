@@ -48,14 +48,14 @@ namespace suitcase.Controllers
         }
 
         // GET: Performance/Create
-        // public IActionResult Create()
-        // {
-        //     ViewBag.Message = "Let's Build a production";
-        //     dynamic performanceDetailsViewModel = new ExpandoObject();
-        //     performanceDetailsViewModel.PerformerName = PerformanceName();
-        //     performanceDetailsViewModel.ActDetailsViewModels = ActDetailsViewModels();
-        //     return View();
-        // }
+        public IActionResult Create()
+        {
+            // ViewBag.Message = "Let's Build a production";
+            // dynamic performanceDetailsViewModel = new ExpandoObject();
+            // performanceDetailsViewModel.PerformerName = PerformanceName();
+            // performanceDetailsViewModel.ActDetailsViewModels = ActDetailsViewModels();
+            return View();
+        }
 
         // POST: Performance/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
