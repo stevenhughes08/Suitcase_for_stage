@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Data.Sqlite;
 using suitcase.Models;
 
+
 namespace suitcase.Data
 {
     public class Context : DbContext

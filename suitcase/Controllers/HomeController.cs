@@ -10,6 +10,7 @@ using suitcase.Models;
 using suitcase.Models.ViewModels;
 using suitcase.Data;
 
+
 namespace suitcase.Controllers
 {
     public class HomeController : Controller
