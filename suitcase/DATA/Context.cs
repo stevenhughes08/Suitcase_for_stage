@@ -21,11 +21,6 @@ namespace suitcase.Data
         
             modelBuilder.Entity<ActPerformer>().HasKey(t => new { t.PerformerId, t.ActId });
             modelBuilder.Entity<ActProp>().HasKey(t => new { t.PropId, t.ActId });
-            // modelBuilder.Entity<Prop>().Property(x => x.PropId).HasDefaultValueSql("NEWID()");
-
-            // modelBuilder.Entity<Prop>().HasData(
-            //     new Prop() { PropId = Guid.NewGuid()}
-            // );
         }
         public DbSet<Act> Acts { get; set; }
         public DbSet<Performance> Performances { get; set; }

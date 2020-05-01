@@ -1,3 +1,5 @@
+using System.Data.Common;
+using System.Security.Cryptography.X509Certificates;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using suitcase.Data;
 using suitcase.Models;
+using suitcase.Models.ViewModels;
 
 namespace suitcase.Controllers
 {
@@ -79,7 +82,7 @@ namespace suitcase.Controllers
                 return NotFound();
             }
 
-            var act = await _context.Acts.FindAsync(id);
+            var act = await _context.Acts.Include(a => a.ActProps).ThenInclude(a => a.Prop).Where(a => a.Id == id).Select(e => new PerformanceDetailsViewModel{ PerformanceName = e.Id }).FirstOrDefaultAsync();
             if (act == null)
             {
                 return NotFound();
