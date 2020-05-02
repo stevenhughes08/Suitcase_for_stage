@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using suitcase.Data;
 
 namespace suitcase.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200502175043_fixedPropIDBugAttempt2")]
+    partial class fixedPropIDBugAttempt2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,9 +61,14 @@ namespace suitcase.Migrations
                     b.Property<Guid>("ActId")
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid?>("Props.Id")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("PropId", "ActId");
 
                     b.HasIndex("ActId");
+
+                    b.HasIndex("Props.Id");
 
                     b.ToTable("ActProp");
                 });
@@ -101,10 +108,6 @@ namespace suitcase.Migrations
 
             modelBuilder.Entity("suitcase.Models.Prop", b =>
                 {
-                    b.Property<Guid>("PropId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("PropId")
@@ -114,10 +117,14 @@ namespace suitcase.Migrations
                         .HasColumnType("TEXT")
                         .HasMaxLength(80);
 
+                    b.Property<Guid>("PropId")
+                        .HasColumnName("PropId1")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("StorageLocation")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("PropId");
+                    b.HasKey("Id");
 
                     b.ToTable("Props");
                 });
@@ -156,9 +163,7 @@ namespace suitcase.Migrations
 
                     b.HasOne("suitcase.Models.Prop", "Prop")
                         .WithMany("ActProps")
-                        .HasForeignKey("PropId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Props.Id");
                 });
 #pragma warning restore 612, 618
         }

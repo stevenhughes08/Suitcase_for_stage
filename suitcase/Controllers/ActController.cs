@@ -82,7 +82,7 @@ namespace suitcase.Controllers
                 return NotFound();
             }
 
-            var act = await _context.Acts.Include(a => a.ActProps).ThenInclude(a => a.Prop).Where(a => a.Id == id).Select(e => new PerformanceDetailsViewModel{ PerformanceName = e.Id }).FirstOrDefaultAsync();
+            var act = await _context.Acts.Include(a => a.ActProps).ThenInclude(a => a.Prop).Where(a => a.Id == id).FirstOrDefaultAsync();
             if (act == null)
             {
                 return NotFound();
