@@ -9,7 +9,10 @@ namespace suitcase.Models
     public class BaseNamedEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
         public Guid Id { get; set; }
+
+        [StringLength(80, ErrorMessage="The Length of a name cannot be longer than 80 Characters")]
         public string Name { get; set; }
     }
 
