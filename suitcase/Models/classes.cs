@@ -10,7 +10,11 @@ namespace suitcase.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "Name cannot be longer than 100 characters.")]
         public string Name { get; set; }
+       
     }
 
     public class Performer : BaseNamedEntity
@@ -21,17 +25,28 @@ namespace suitcase.Models
 
     public class Prop : BaseNamedEntity
     {   
+        public Prop()
+        {
+            this.Acts = new HashSet<Act>();
+        }
         public Guid PropId { get; set; }
+        [Required]
 
         [Display(Name = "Storage Location")]
         public string StorageLocation { get; set; }
-        public ICollection<ActProp> ActProps { get; set; }
+        public ICollection<Act> Acts { get; set; }
     }
 
      public class Act : BaseNamedEntity
     {
+        public Act()
+        {
+            this.Props = new HashSet<Prop>();
+        }
         public Guid PerformanceId { get; set; }
         public Performance Performance { get; set; }
+
+        public ICollection<Prop> Props { get; set; }
         public ICollection<ActPerformer> ActPerformers { get; set; }
         public ICollection<ActProp> ActProps { get; set; }
         

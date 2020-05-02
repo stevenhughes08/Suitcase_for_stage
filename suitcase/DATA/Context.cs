@@ -19,8 +19,10 @@ namespace suitcase.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
         
-            modelBuilder.Entity<ActPerformer>().HasKey(t => new { t.PerformerId, t.ActId });
-            modelBuilder.Entity<ActProp>().HasKey(t => new { t.PropId, t.ActId });
+            modelBuilder.Entity<ActPerformer>()
+                .HasKey(t => new { t.PerformerId, t.ActId });
+            modelBuilder.Entity<ActProp>()
+                .HasKey(t => new { t.PropId, t.ActId });
         }
         public DbSet<Act> Acts { get; set; }
         public DbSet<Performance> Performances { get; set; }
