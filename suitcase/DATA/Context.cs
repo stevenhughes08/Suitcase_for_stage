@@ -18,6 +18,16 @@ namespace suitcase.Data
         protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlite("Data Source=suitcaseContext.db");
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // modelBuilder.Entity<Prop>()
+            //     .HasMany<Act>(a => a.Acts)
+            //     .WithMany<Prop>(p => p.Props)
+            //     .Map(cs => {
+            //         cs.MapLeftKey("ActId");
+            //         cs.MapRightKey("PropId");
+            //         cs.ToTable("ActProps");
+            //     });
+
+                
         
             modelBuilder.Entity<ActPerformer>().HasKey(t => new { t.PerformerId, t.ActId });
             modelBuilder.Entity<ActProp>().HasKey(t => new { t.PropId, t.ActId });
