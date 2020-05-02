@@ -1,3 +1,4 @@
+using System.Reflection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -23,14 +24,22 @@ namespace suitcase.Models
         public ICollection<ActPerformer> ActPerformers { get; set; }
     }
 
-    public class Prop : BaseNamedEntity
+    public class Prop
     {   
         public Prop()
         {
             this.Acts = new HashSet<Act>();
         }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid PropId { get; set; }
         [Required]
+
+        [Display(Name="Prop Name")]
+        public String Name { get; set; }
+        [Required]
+
+
 
         [Display(Name = "Storage Location")]
         public string StorageLocation { get; set; }
@@ -45,10 +54,10 @@ namespace suitcase.Models
         }
         public Guid PerformanceId { get; set; }
         public Performance Performance { get; set; }
-
         public ICollection<Prop> Props { get; set; }
-        public ICollection<ActPerformer> ActPerformers { get; set; }
-        public ICollection<ActProp> ActProps { get; set; }
+        public ICollection<Performance> Performances { get; set; }
+        public ICollection<Performer> Performers {get; set; }
+    
         
     }
     public class Performance : BaseNamedEntity
@@ -56,26 +65,26 @@ namespace suitcase.Models
         public ICollection<Act> Acts { get; set; }
     }
 
-    public class ActProp
-    {
-        public Guid ActId { get; set; }
-        [ForeignKey("ActId")]
-        public Act Act { get; set; }
-        public Guid PropId { get; set; }
-        [ForeignKey("PropId")]
-        public Prop Prop { get; set; }
+    // public class ActProp
+    // {
+    //     public Guid ActId { get; set; }
+    //     [ForeignKey("ActId")]
+    //     public Act Act { get; set; }
+    //     public Guid PropId { get; set; }
+    //     [ForeignKey("PropId")]
+    //     public Prop Prop { get; set; }
     
-    }
+    // }
 
-    public class ActPerformer 
-    {
-      public Guid PerformerId { get; set; }
-        [ForeignKey("PerformerId")]
-        public Performer Performer { get; set; }
-        public Guid ActId { get; set; }
-        [ForeignKey("ActId")]
-        public Act Act { get; set; }
+    // public class ActPerformer 
+    // {
+    //   public Guid PerformerId { get; set; }
+    //     [ForeignKey("PerformerId")]
+    //     public Performer Performer { get; set; }
+    //     public Guid ActId { get; set; }
+    //     [ForeignKey("ActId")]
+    //     public Act Act { get; set; }
 
-    }
+    // }
 
 }
