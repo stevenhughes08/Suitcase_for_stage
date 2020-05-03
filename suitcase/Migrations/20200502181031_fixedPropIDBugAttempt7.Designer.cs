@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using suitcase.Data;
 
 namespace suitcase.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200502181031_fixedPropIDBugAttempt7")]
+    partial class fixedPropIDBugAttempt7
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,9 +61,14 @@ namespace suitcase.Migrations
                     b.Property<Guid>("ActId")
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid?>("PropsId")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("PropId", "ActId");
 
                     b.HasIndex("ActId");
+
+                    b.HasIndex("PropsId");
 
                     b.ToTable("ActProp");
                 });
@@ -156,9 +163,7 @@ namespace suitcase.Migrations
 
                     b.HasOne("suitcase.Models.Prop", "Prop")
                         .WithMany("ActProps")
-                        .HasForeignKey("PropId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PropsId");
                 });
 #pragma warning restore 612, 618
         }

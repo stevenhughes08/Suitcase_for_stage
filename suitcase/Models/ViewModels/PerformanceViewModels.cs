@@ -11,16 +11,12 @@ namespace suitcase.Models.ViewModels
     {
       
 
-        public PerformanceDetailsViewModel(Performance performance)
-        {
-            PerformanceId = performance.Id;
-            PerformanceName = performance.Name;
-            // ActDetailsViewModels = new ActDetailsViewModel
-            // {
-                
+        // public PerformanceDetailsViewModel(Performance performance)
+        // {
+        //     PerformanceId = performance.Id;
+        //     PerformanceName = performance.Name;
 
-            // };
-        }
+        // }
 
         public Guid PerformanceId { get; set; }
         public string PerformanceName { get; set; }

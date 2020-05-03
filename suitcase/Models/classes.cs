@@ -9,7 +9,10 @@ namespace suitcase.Models
     public class BaseNamedEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
         public Guid Id { get; set; }
+
+        [StringLength(80, ErrorMessage="The Length of a name cannot be longer than 80 Characters")]
         public string Name { get; set; }
     }
 
@@ -21,7 +24,9 @@ namespace suitcase.Models
 
     public class Prop : BaseNamedEntity
     {   
-        public Guid PropId { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
+         public Guid PropId { get; set; }
 
         [Display(Name = "Storage Location")]
         public string StorageLocation { get; set; }
@@ -54,7 +59,7 @@ namespace suitcase.Models
 
     public class ActPerformer 
     {
-      public Guid PerformerId { get; set; }
+        public Guid PerformerId { get; set; }
         [ForeignKey("PerformerId")]
         public Performer Performer { get; set; }
         public Guid ActId { get; set; }

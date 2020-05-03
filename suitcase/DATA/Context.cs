@@ -18,19 +18,33 @@ namespace suitcase.Data
         protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlite("Data Source=suitcaseContext.db");
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-        
-            modelBuilder.Entity<ActPerformer>().HasKey(t => new { t.PerformerId, t.ActId });
-            modelBuilder.Entity<ActProp>().HasKey(t => new { t.PropId, t.ActId });
-            // modelBuilder.Entity<Prop>().Property(x => x.PropId).HasDefaultValueSql("NEWID()");
+            modelBuilder.Entity<Prop>()
+                    .Property(p => p.Id)
+                    .HasColumnName("PropId");
 
-            // modelBuilder.Entity<Prop>().HasData(
-            //     new Prop() { PropId = Guid.NewGuid()}
-            // );
+            modelBuilder.Entity<ActPerformer>().HasKey(apr => new { apr.PerformerId, apr.ActId });
+            modelBuilder.Entity<ActPerformer>()
+                .HasOne(apr => apr.Act).WithMany(a => a.ActPerformers).HasForeignKey(apr => apr.ActId);
+            
+            modelBuilder.Entity<ActPerformer>().HasOne<Performer>(p => p.Performer ).WithMany(a => a.ActPerformers)
+.HasForeignKey(p => p.PerformerId);
+         
+            modelBuilder.Entity<ActProp>().HasKey(t => new { t.PropId, t.ActId });
+                
+            modelBuilder.Entity<ActProp>()
+                .HasOne(ap => ap.Act)
+                .WithMany(p => p.ActProps)
+                .HasForeignKey(ap => ap.ActId);
+
+            modelBuilder.Entity<ActProp>()
+                .HasOne(ap => ap.Prop)
+                .WithMany(p => p.ActProps)
+                .HasForeignKey(ap => ap.PropId);
         }
         public DbSet<Act> Acts { get; set; }
         public DbSet<Performance> Performances { get; set; }
         public DbSet<Performer> Performers { get; set; }
-        public DbSet<Prop> Props { get => props; set => props = value; }
+        public DbSet<Prop> Props { get; set; }
     }
 
 
