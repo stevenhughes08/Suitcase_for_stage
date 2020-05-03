@@ -1,0 +1,19 @@
+@model suitcase.Models.ViewModels.PerformanceDetailsViewModel
+
+@{
+    ViewBag.Title = "InputForm";
+}
+
+<h1>Perestroika! Lets build a Production!</h1>
+
+<table>
+    @foreach (var perforamnce in Model.PerformanceName)
+    {
+        <tr>
+             <td>
+                <a asp-controller="Performance" asp-action="Create" asp-routeid = "@Model.PerformanceName">"Create"</a>
+     </td>   
+        </tr>
+    }
+</table>
+

@@ -10,14 +10,6 @@ namespace suitcase.Models.ViewModels
     public class PerformanceDetailsViewModel
     {
       
-
-        // public PerformanceDetailsViewModel(Performance performance)
-        // {
-        //     PerformanceId = performance.Id;
-        //     PerformanceName = performance.Name;
-
-        // }
-
         public Guid PerformanceId { get; set; }
         public string PerformanceName { get; set; }
 
@@ -31,6 +23,7 @@ namespace suitcase.Models.ViewModels
 
         public string PerformerName { get; set; }
 
+        public Prop PropId { get; set; }
         public string PropName { get; set; }
     }
 }

@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Data.Common;
 using System.Security.Cryptography.X509Certificates;
 using System;
@@ -82,12 +83,16 @@ namespace suitcase.Controllers
                 return NotFound();
             }
 
-            var act = await _context.Acts.Include(a => a.ActProps).ThenInclude(a => a.Prop).Where(a => a.Id == id).FirstOrDefaultAsync();
+            var act = await _context.Acts.Include(a => a.ActProps)
+            .ThenInclude(a => a.Prop)
+            .Where(a => a.Id == id)
+            .Select(a => new ActEditViewModel { Id = a.Id, ActName = a.Name, PropIds = a.ActProps.Select(z => z.PropId).ToList()  }).FirstOrDefaultAsync();
             if (act == null)
             {
                 return NotFound();
             }
-            ViewData["PerformanceId"] = new SelectList(_context.Performances, "Name", "Id", act.PerformanceId);
+            ViewData["PropIds"] = new SelectList(_context.Props, "Id", "Name", ActProps.Name ?? new List<Guid>());
+            // ViewData["PerformanceId"] = new SelectList(_context.Performances, "Name", "Id", act.PerformanceId);
             return View(act);
         }
 

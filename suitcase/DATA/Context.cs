@@ -40,7 +40,9 @@ namespace suitcase.Data
                 .HasOne(ap => ap.Prop)
                 .WithMany(p => p.ActProps)
                 .HasForeignKey(ap => ap.PropId);
+
         }
+
         public DbSet<Act> Acts { get; set; }
         public DbSet<Performance> Performances { get; set; }
         public DbSet<Performer> Performers { get; set; }
