@@ -50,10 +50,7 @@ namespace suitcase.Controllers
         // GET: Performance/Create
         public IActionResult Create()
         {
-            // ViewBag.Message = "Let's Build a production";
-            // dynamic performanceDetailsViewModel = new ExpandoObject();
-            // performanceDetailsViewModel.PerformerName = PerformanceName();
-            // performanceDetailsViewModel.ActDetailsViewModels = ActDetailsViewModels();
+           
             return View();
         }
 
@@ -158,29 +155,5 @@ namespace suitcase.Controllers
         {
             return _context.Performances.Any(e => e.Id == id);
         }
-
-        //CREATE AND ACCESS THE VIEWMODEL
-        // public ViewResult PerformaceDetails()
-        // {
-        //     ViewBag.Title = "Performance Details Page";
-        //     ViewBag.Header = "Setlist View";
-
-        //     //Performance Basic Details
-        //    Performance Performance = new Performance()
-        //    {
-        //         // Id = "Performance.Id",
-        //         // Name = "Performance.Name",
-        //         // Act = "ActName",
-        //         // PerformerNames = "PerformerName",
-        //         // PropName = "PropName"
-
-        //    };
-            
-        //     PerformanceDetailsViewModel performanceDetailsViewModel = new PerformanceDetailsViewModel()
-        //     {
-
-        //     }
-        //     return View(performanceDetailsViewModel);
-        // }
     }
 }

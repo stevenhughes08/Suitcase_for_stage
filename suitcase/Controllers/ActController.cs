@@ -52,7 +52,7 @@ namespace suitcase.Controllers
         public IActionResult Create()
         {
             ViewData["PerformanceId"] = new SelectList(_context.Performances, "Id", "Id");
-            ViewData["PerformanceName"] = new SelectList(_context.Performances, "Name", "Name");
+            // ViewData["PerformanceName"] = new SelectList(_context.Performances, "Name", "Name");
             return View();
         }
 
@@ -70,7 +70,7 @@ namespace suitcase.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PerformanceId"] = new SelectList(_context.Performances, "Id", "Name", act.PerformanceId);
+            ViewData["PerformanceId"] = new SelectList(_context.Performances, "Name", "Id", act.Performance.Name + act.PerformanceId);
             return View(act);
         }
 
