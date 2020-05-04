@@ -21,7 +21,7 @@
 1. Open VSCode and navigate to the folder where you cloned or saved suitcase project. Open the suitcase folder.
 > ![Click the Suitcase_for_stage folder](suitcase/wwwroot/images/folder1.jpg)
 > ![Click into the suitcase project folder](suitcase/wwwroot/images/folder2.jpg)
-2. Click the **Select Folder** button.
+1. Click the **Select Folder** button.
 > ![Open the suitcase folder](suitcase/wwwroot/images/folder3.jpg)
 3. Your screen should look like the image below
 > ![](suitcase/wwwroot/images/startvscode1.jpg);
