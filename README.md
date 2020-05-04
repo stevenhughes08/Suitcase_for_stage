@@ -19,13 +19,13 @@
    `git clone https//github.com/stevenhughes08/Suitcase_for_stage.git`
 
 1. Open VSCode and navigate to the folder where you cloned or saved suitcase project. Open the suitcase folder.
-> ![Click the Suitcase_for_stage folder](suitcase/wwwroot/images/folder1.jpg)
-> ![Click into the suitcase project folder](suitcase/wwwroot/images/folder2.jpg)
+> ![Click the Suitcase_for_stage folder](suitcase/wwwroot/images/folder1.jpg);
+> ![Click into the suitcase project folder](suitcase/wwwroot/images/folder2.jpg);
 1. Click the **Select Folder** button.
-> ![Open the suitcase folder](suitcase/wwwroot/images/folder3.jpg)
+> ![Open the suitcase folder](suitcase/wwwroot/images/folder3.jpg);
 3. Your screen should look like the image below
 > ![](suitcase/wwwroot/images/startvscode1.jpg);
-4. Click the Debug Button ![](suitcase/wwwroot/images/startvscode2.jpg) and press the green play button ![](wwwroot/images/startvscode3.jpg). This will Launch *suitcase*.
+4. Click the Debug Button ![](suitcase/wwwroot/images/startvscode2.jpg); and press the green play button ![](wwwroot/images/startvscode3.jpg); This will Launch *suitcase*.
 5. Your browser should now be running suitcase. 
 > ![suitcase](suitcase/wwwroot/images/suitcase1.jpg)
 
