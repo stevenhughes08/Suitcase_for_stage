@@ -43,36 +43,36 @@
 1. *suitcase* Core Features
     The core features of *suitcase* are Setlist builder and the prop library (which will be discussed later)
       - Click the green **Perestroika Let's Build** button. This will launch *suitcase*'s production builder. You must name your production, but you can always go back and change the name later if you need to.
-    ![image create a performance](images/suitcase2.jpg)
+    ![image create a performance](images/suitcase2.JPG)
 2. Once you click the **Create** button you will be taken to the Performance Index page.
-   >![image performance index page](images/suitcase3.jpg)
+   >![image performance index page](images/suitcase3.JPG)
    >If you want to view setlists for other performances you can click the **Details** tab in the column to your right. You can use the **Edit**, and **Delete** buttons to change and remove performances from your database. The **Create New** will allow you to add create a new Performance, but now lets Add Acts to your performance. Click the Green **Add Acts** button located at the bottom of the page.
 3. Click the **Add Acts** button you will be taken to the Act Creator screen.
-   >![image Act Creator page](images/suitcase4.jpg)
+   >![image Act Creator page](images/suitcase4.JPG)
    - You will be required to name your Act, that can always be changed later. However, currently you must select your Act by the Performance ID. This is not a user friendly implementation and will fixed in a later release. Once you have named your Act click **Create**.
 4. Once you complete step 3 you will be taken to the Acts Index page. This will list all acts sorted by Performance. If at the bottom of the page you will find a green button labeled **Add or Edit Props.**  
-   >![image Acts Index page](images/suitcase5.jpg)
+   >![image Acts Index page](images/suitcase5.JPG)
 5. Once you click the **Add or Edit Props** button it will launch *suitcase*'s Prop Library.
-   >![image suitcase Image Library](images/suitcase6.jpg)
+   >![image suitcase Image Library](images/suitcase6.JPG)
    >Much like all other screen you can perform **Create**, **Read**, **Update** and **Delete** functions on all the props you are storing. You can also search for each prop or storage location. You can use the **Create New** link to add more props and the **Previous** and **Next** buttons to Navigate the prop library.
 6. Click the **View Your Setlist** button. This will navigate you back to the Performance Index page. Locate your **Performance** in the **Name** column and click **Details**. This will display the *Performance Index Page.*
-    >![image performance index page](images/suitcase3.jpg)
+    >![image performance index page](images/suitcase3.JPG)
 7. Once you click **View Your Setlist** you will see the *Performance Index* page. Click **Details**. This will allow you to view a setlist as shown in the image below. This will show a Performance and list of acts.
 
-![image performance index page](images/suitcase7.jpg)
+![image performance index page](images/suitcase7.JPG)
 
 ## Other Features
 
 ## *suitcase*'s button navigateion
 
 - *suitcase* offsers navbar navigation.
-![image  suitcase navbar](images/suitcase8.jpg)
+![image  suitcase navbar](images/suitcase8.JPG)
 - If at any point you require to navigate to any of *suitcase*'s other features you can use the navbar to break out of *suitcase*'s button navigation.
   
 ## Performer Tracking
 
 - This feature is currently not active in the set list builder. However it will be added in future updates.
-![image  Performer Screen](images/suitcase9.jpg)
+![image  Performer Screen](images/suitcase9.JPG)
 *suitcase*'s perfomer screen allows you to add a **Performer** and headshot url. This feature is not fully active at this time.
 
 >Thank you for using *suitcase*.
