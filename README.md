@@ -22,7 +22,7 @@
 > ![Click the Suitcase_for_stage folder](suitcase/wwwroot/images/folder1.jpg)
 > ![Click into the suitcase project folder](suitcase/wwwroot/images/folder2.jpg)
 2. Click the **Select Folder** button.
-> ![Open the suitcase folder](wwwroot/images/folder3.jpg)
+> ![Open the suitcase folder](suitcase/wwwroot/images/folder3.jpg)
 3. Your screen should look like the image below
 > ![](suitcase/wwwroot/images/startvscode1.jpg);
 4. Click the Debug Button ![](suitcase/wwwroot/images/startvscode2.jpg) and press the green play button ![](wwwroot/images/startvscode3.jpg). This will Launch *suitcase*.
