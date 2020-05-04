@@ -33,7 +33,7 @@
 
 ![image: start suitcase](images/startvscode1.jpg)
 
-1. Click the Debug Button ![image: Debug button](images/startvscode2.jpg) and press the green play button ![image: VSCode play button](images/startvscode3.jpg) This will Launch *suitcase*.
+1. Click the Debug Button ![image: Debug button](images/startvscode2.jpg) and press the green play button ![image: VSCode play button](images/startvscode3.JPG) This will Launch *suitcase*.
 
 1. Your browser should now be running suitcase.
 ![suitcase](images/suitcase1.jpg)
