@@ -22,7 +22,7 @@
    `git clone https//github.com/stevenhughes08/Suitcase_for_stage.git`
 
 1. Open VSCode and navigate to the folder where you cloned or saved suitcase project. Open the suitcase folder.
-![Click the Suitcase_for_stage folder](images/folder1.jpg)
+![Click the Suitcase_for_stage folder](images/folder1.JPG)
 
 ![Click into the suitcase project folder](images/folder2.jpg)
 
